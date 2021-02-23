@@ -214,7 +214,7 @@ class Cache(object):
         Encodes a tuple of address and port in shorten hash for storage in
         Redis.
         """
-        return hashlib.sha256('%s-%d' % node).hexdigest()[:8]
+        return str('%s-%d' % node)
 
     def cache_rtt(self):
         """
